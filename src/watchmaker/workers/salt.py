@@ -673,7 +673,9 @@ class SaltLinux(SaltBase, LinuxPlatformManager):
         ]
 
         # Add distro-specific policycoreutils RPM to package-list
-        self.yum_pkgs.append(self._policy_rpm(distro.version().split(".")[0]))
+        self.yum_pkgs.append(
+            self._policy_rpm("9" if distro.id() == "amzn" else distro.version()[0])
+        )
 
         # Set up variables for paths to Salt directories and applications.
         self.salt_call = "/usr/bin/salt-call"

@@ -36,6 +36,7 @@ linux:
         # SaltEL9:
         - dist:
             - almalinux
+            - amazon
             - centos
             - oracle
             - redhat

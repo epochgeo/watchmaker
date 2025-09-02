@@ -50,7 +50,7 @@ class Yum(WorkerBase, LinuxPlatformManager):
         # All amzn linux distros currently available use el6-based packages.
         # When/if amzn linux switches a distro to el7, rethink this.
         self.log.debug("Amazon Linux, version=%s", version)
-        return "6"
+        return "9"
 
     def get_dist_info(self):
         """Validate the Linux distro and return info about the distribution."""
@@ -60,7 +60,7 @@ class Yum(WorkerBase, LinuxPlatformManager):
 
         # Determine el_version
         if dist == "amazon":
-            el_version = self._get_amazon_el_version(version)
+            el_version = self._get_amazon_el_version(distro.version())
         else:
             el_version = distro.version().split(".")[0]
 
