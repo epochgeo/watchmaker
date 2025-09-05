@@ -1,4 +1,4 @@
-watchmaker_version: ">= 0.27.2.dev"
+watchmaker_version: "== 0.29.4"
 
 all:
   - salt:
@@ -33,7 +33,7 @@ linux:
             - rocky
           el_version: 8
           url: https://watchmaker.cloudarmor.io/yum.defs/saltstack/salt/3007.2/salt-reposync-onedir.repo
-        # SaltEL9:
+         SaltEL9:
         - dist:
             - almalinux
             - amazon
@@ -42,6 +42,11 @@ linux:
             - redhat
             - rocky
           el_version: 9
+          url: https://watchmaker.cloudarmor.io/yum.defs/saltstack/salt/3007.2/salt-reposync-onedir.repo
+        # SaltAL2023:
+        - dist:
+            - al2023
+          el_version: 2023
           url: https://watchmaker.cloudarmor.io/yum.defs/saltstack/salt/3007.2/salt-reposync-onedir.repo
   - salt:
       pip_install:
