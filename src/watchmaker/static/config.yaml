@@ -33,7 +33,7 @@ linux:
             - rocky
           el_version: 8
           url: https://watchmaker.cloudarmor.io/yum.defs/saltstack/salt/3007.2/salt-reposync-onedir.repo
-         SaltEL9:
+        # SaltEL9:
         - dist:
             - almalinux
             - amazon
