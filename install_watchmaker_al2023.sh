@@ -1,4 +1,4 @@
-# Could not get it to install w/o sudo
+# Could not get this to install w/o sudo
 #
 # scap profiles:
 #
@@ -10,6 +10,9 @@
 #
 # You should be able to set the profile from config.yaml but was unable. Had to set it in:
 # watchmaker/src/watchmaker/static/salt/formulas/scap-formula/scap/oscap/scan.sls 
+#
+# Also had to make changes to forked ash-linux-formula and scap-formula submodules for hardening and reporting
+# to work.
 
 sudo python3 -m ensurepip --upgrade
 
