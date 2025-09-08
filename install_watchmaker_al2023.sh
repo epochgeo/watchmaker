@@ -14,16 +14,6 @@
 # Also had to make changes to forked ash-linux-formula and scap-formula submodules for hardening and reporting
 # to work.
 
-sudo python3 -m ensurepip --upgrade
-
-sudo dnf install git
-python3 -m pip install build wheel setuptools
-
-git clone https://github.com/plus3it/watchmaker.git --recursive && cd watchmaker
-git submodule update --init --recursive
-git checkout 0.29.4
-sudo python3 -m pip install -e .
-
 sudo curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.repo \
   | sudo tee /etc/yum.repos.d/salt.repo
 sudo dnf clean expire-cache
@@ -32,6 +22,17 @@ sudo systemctl enable salt-minion
 sudo systemctl start salt-minion
 # sudo systemctl enable salt-master
 # sudo systemctl start salt-master
+
+sudo dnf install git
+
+sudo python3 -m ensurepip --upgrade
+
+python3 -m pip install build wheel setuptools
+
+git clone https://github.com/plus3it/watchmaker.git --recursive && cd watchmaker
+git submodule update --init --recursive
+git checkout 0.29.4
+sudo python3 -m pip install -e .
 
 sudo cp -R ~/watchmaker/src/watchmaker/static/salt/formulas/ash-linux-formula/ash-linux/el9 ~/watchmaker/src/watchmaker/static/salt/formulas/ash-linux-formula/ash-linux/el2023
 
