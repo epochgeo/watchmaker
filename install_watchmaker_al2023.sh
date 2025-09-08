@@ -34,6 +34,5 @@ sudo systemctl start salt-minion
 # sudo systemctl start salt-master
 
 sudo cp -R ~/watchmaker/src/watchmaker/static/salt/formulas/ash-linux-formula/ash-linux/el9 ~/watchmaker/src/watchmaker/static/salt/formulas/ash-linux-formula/ash-linux/el2023
-sudo cp -R ~/watchmaker/src/watchmaker/static/salt/formulas/ash-linux-formula/ash-linux/el2023 /srv/watchmaker/salt/formulas/ash-linux-formula/ash-linux
 
 sudo watchmaker –no-reboot --config /home/ec2-user/watchmaker/src/watchmaker/static/config.yaml
